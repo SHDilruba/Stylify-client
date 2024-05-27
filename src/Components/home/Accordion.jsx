@@ -2,8 +2,9 @@ import React from 'react';
 
 const Accordion = () => {
  return (
-  <div>
-        <div className="collapse collapse-arrow bg-base-200">
+  <div className='w-4/5 mb-10  mx-auto'>
+         <h1 className='font-bold text-2xl text-center mt-11 mb-8'> Frequently Asked Questions!</h1>
+        <div className="collapse collapse-arrow bg-base-200 ">
   <input type="radio" name="my-accordion-2" defaultChecked /> 
   <div className="collapse-title text-xl font-medium">
     Click to open this one and close others
