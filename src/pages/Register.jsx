@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import GoogleLogin from "../Components/LoginRegistration/GoogleLogin";
+import useAuth from "../hooks/useAuth";
 
 const Register = () => {
   const [passMatch, setPassMatch] = useState(true);
-
+  const {createUser} = useAuth();
  const handleSubmit = (e) => {
    e.preventDefault();
 
@@ -17,9 +17,12 @@ const Register = () => {
    if (password !== confirm_password) {
      setPassMatch(false);
    }
-
    console.log(email, password, confirm_password);
+   if (password === confirm_password){
+    createUser(email, password)
+   }
   };
+
  return (
    <div className="hero min-h-screen bg-base-200">
      <div className="hero-content grid grid-cols-2 w-full mx-auto">

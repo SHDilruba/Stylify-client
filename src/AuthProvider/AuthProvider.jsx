@@ -1,7 +1,6 @@
-import { getAuth, signInWithPopup } from "firebase/auth";
-import { createContext } from "react"
-import { app } from "../firebase/firebase.config";
-import { GoogleAuthProvider } from "firebase/auth/cordova";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react"
+import app from "../firebase/firebase.init";
 
 export const AuthContext = createContext(null)
 
@@ -9,13 +8,37 @@ const auth = getAuth(app)
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
- const googleProvider = new GoogleAuthProvider();
+   const [user, setUser] = useState(null);
+   const googleProvider = new GoogleAuthProvider();
+
+  const createUser = (email, password) => {
+     return createUserWithEmailAndPassword(auth, email, password)
+  }
+
+  const signIn = (email, password) =>{
+   return signInWithEmailAndPassword(auth, email, password)
+  };
+
+  const logOut = ()=> {
+    return signOut(auth)
+  }
 
  const googleLogin = () => {
     return signInWithPopup(auth, googleProvider);
  };
 
- const authInfo = { googleLogin };
+ useEffect(()=> {
+    const unsubscribe = onAuthStateChanged(auth, currentUser =>{
+      if(currentUser){
+         setUser(currentUser)
+        console.log(currentUser) 
+      }
+    });
+    return unsubscribe;
+ },[])
+
+ const authInfo = {user, googleLogin, createUser, signIn, logOut};
+
  return(
   <AuthContext.Provider value ={authInfo}>
        {children}
