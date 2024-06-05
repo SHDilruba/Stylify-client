@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -12,3 +13,6 @@ const firebaseConfig = {
 // export const app = initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
 export default app;
+=======
+
+>>>>>>> 5cd93b7400a077475dbc77957e770c8ac6147a14
