@@ -8,6 +8,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/Dashboard";
 import Register from "../pages/Register";
 import PrivateRoute from "./private/PrivateRoute";
+import CategoryProducts from "../pages/CategoryProducts";
 
 export const router = createBrowserRouter([
  {
@@ -31,12 +32,22 @@ export const router = createBrowserRouter([
    path: "/register",
    element: <Register></Register>
   },
+  {
+    path: "/category/:id",
+    element: (
+      <PrivateRoute>
+        <CategoryProducts></CategoryProducts>
+      </PrivateRoute>
+    ),
+    loader: ({ params }) =>
+      fetch(`https://stylify-server.vercel.app/products/category/${params.id}`)
+  },
    ]
  },
  {
-  path: "dashboard",
+  path: "/dashboard",
   element: <DashboardLayout />,
   errorElement: <ErrorPage />,
-  children: [{ path: "", element: <PrivateRoute>Dashboard</PrivateRoute> }],
+  children: [{ path: "", element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute> }],
 },
 ]);

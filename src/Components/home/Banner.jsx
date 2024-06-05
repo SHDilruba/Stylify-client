@@ -1,5 +1,6 @@
 import React from 'react'
 import banner from "../../assets/banner.jpg";
+import PrimaryButton from '../shared/PrimaryButton';
 
 export default function Banner() {
   return (
@@ -15,8 +16,8 @@ export default function Banner() {
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
       <h1 className="mb-5 text-red-200 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn bg-red-600  bg-gradient-to-r from-white to-red">Get Started</button>
+      <p className="mb-5">Find a great selection of Women's Clothing, Shoes, & Accessories from us. We have particular design by top designers.</p>
+      <PrimaryButton>Get Started</PrimaryButton>
     </div>
   </div>
 </div>

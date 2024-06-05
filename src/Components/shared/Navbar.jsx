@@ -13,6 +13,7 @@ const Navbar = () => {
              className="h-5 w-5"
              fill="none"
              viewBox="0 0 24 24"
+            //  viewBox="0 0 100% 4"
              stroke="currentColor"
            >
              <path
@@ -25,7 +26,7 @@ const Navbar = () => {
          </div>
          <ul
            tabIndex={0}
-           className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+           className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-48"
          >
            <li>
              <Link to={"/"}>Home</Link>
@@ -43,11 +44,11 @@ const Navbar = () => {
              <Link to={"/dashboard"}>Dashboard</Link>
            </li>
            <li>
-           <button onClick={()=>logOut()} className="bg-red-500 text-white">Logout</button>
+           <button onClick={()=>logOut()} className="bg-red-500 text-white py-1 mt-1 mb-2 w-1/2">Logout</button>
          </li>
          </ul>
        </div>
-       <a className="btn btn-ghost text-xl text-red-400">daisyUI</a>
+       <a className="btn btn-ghost text-3xl font-bold text-red-400">Stylify</a>
      </div>
      <div className="navbar-center hidden lg:flex">
        <ul className="menu menu-horizontal px-1">
@@ -66,13 +67,10 @@ const Navbar = () => {
          <li>
            <Link to={"/dashboard"}>Dashboard</Link>
          </li>
-         <li>
-           <button onClick={()=>logOut()} className="bg-red-500 text-white">Logout</button>
-         </li>
        </ul>
      </div>
-     <div className="navbar-end">
-       <a className="btn">Button</a>
+     <div className="navbar-end mr-4">
+     <button onClick={()=>logOut()} className="bg-red-500 text-white px-3 py-1.5 rounded-lg">Logout</button>
      </div>
    </div>
  );

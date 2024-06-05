@@ -10,6 +10,7 @@ const Register = () => {
    e.preventDefault();
 
    const form = e.target;
+   const name = form.name.value;
    const email = form.email.value;
    const password = form.password.value;
    const confirm_password = form.confirm_password.value;
@@ -17,7 +18,7 @@ const Register = () => {
    if (password !== confirm_password) {
      setPassMatch(false);
    }
-   console.log(email, password, confirm_password);
+   console.log(name, email, password, confirm_password);
    if (password === confirm_password){
     createUser(email, password)
    }
@@ -36,6 +37,18 @@ const Register = () => {
        </div>
        <div className=" card shadow-2xl bg-base-100 max-w-lg">
          <form onSubmit={handleSubmit} className="card-body  ">
+           <div className="form-control">
+             <label className="label">
+               <span className="label-text">Name</span>
+             </label>
+             <input
+               type="name"
+               name="name"
+               placeholder="name"
+               className="input input-bordered"
+               required
+             />
+           </div>
            <div className="form-control">
              <label className="label">
                <span className="label-text">Email</span>
