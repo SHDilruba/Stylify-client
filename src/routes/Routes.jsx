@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
-import About from "../pages/About";
+import AllProduct from "../pages/AllProduct";
 import Login from "../pages/Login";
 import ErrorPage from "../pages/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
@@ -21,8 +21,8 @@ export const router = createBrowserRouter([
    element: <Home></Home> 
   },
   {
-   path: "/about",
-   element: <About></About> 
+   path: "/products",
+   element: <AllProduct></AllProduct> 
   },
   {
    path: "/login",
@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
     ),
     loader: ({ params }) =>
       fetch(`https://stylify-server.vercel.app/products/category/${params.id}`)
-  },
+  }
    ]
  },
  {

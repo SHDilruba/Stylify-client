@@ -1,6 +1,6 @@
 import React from 'react'
 import banner from "../../assets/banner.jpg";
-import PrimaryButton from '../shared/PrimaryButton';
+import PrimaryButton from '../shared/buttons/PrimaryButton';
 
 export default function Banner() {
   return (

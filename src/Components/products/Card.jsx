@@ -1,4 +1,5 @@
 import React from 'react';
+import CardButton from '../shared/buttons/CardButton';
 
 const Cards = ({children}) => {
  return (
@@ -9,10 +10,9 @@ const Cards = ({children}) => {
     <h2 className="card-title">{children.name}</h2>
     <p>{children.description}</p>
     <div className="card-actions justify-end">
-      <div className='flex gap-2 text-center bg-base-200 rounded-lg'>
-       
+      <div className='flex gap-2 text-center bg-base-200 rounded-lg'>       
            <h3 className='mt-2 px-6 font-bold text-xl'>${children.price}</h3>
-          <button className="btn bg-red-300">Buy Now</button>
+          <CardButton>Buy Now</CardButton>
       </div>
     </div>
   </div>

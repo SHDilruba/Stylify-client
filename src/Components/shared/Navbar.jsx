@@ -13,7 +13,6 @@ const Navbar = () => {
              className="h-5 w-5"
              fill="none"
              viewBox="0 0 24 24"
-            //  viewBox="0 0 100% 4"
              stroke="currentColor"
            >
              <path
@@ -32,7 +31,7 @@ const Navbar = () => {
              <Link to={"/"}>Home</Link>
            </li>
            <li>
-             <Link to={"/about"}>About</Link>
+             <Link to={"/products"}>AllProduct</Link>
            </li>
            <li>
              <Link to={"/login"}>Login</Link>
@@ -56,7 +55,7 @@ const Navbar = () => {
            <Link to={"/"}>Home</Link>
          </li>
          <li>
-           <Link to={"/about"}>About</Link>
+           <Link to={"/products"}>AllProduct</Link>
          </li>
          <li>
            <Link to={"/login"}>Login</Link>
